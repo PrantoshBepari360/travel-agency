@@ -56,7 +56,7 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <Link to={`/dashboard/addProduct`}>
-                        {CalendarPlus} <span>Add A Product</span>
+                        {CalendarPlus} <span>Add A Resort</span>
                       </Link>
                     </li>
                     <li>
