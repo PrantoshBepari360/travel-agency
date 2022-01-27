@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrders`)
+    fetch(`https://blooming-mesa-58970.herokuapp.com/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
   const handleDeleteUser = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete");
     if (proceed) {
-      const url = `http://localhost:5000/allOrders/${id}`;
+      const url = `https://blooming-mesa-58970.herokuapp.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -52,13 +52,11 @@ const ManageAllOrders = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <th>Customer</th>
-              <th>E-mail</th>
-              <th>Phone</th>
-              <th>Address</th>
-              {/* <th>Product</th> */}
-              <th>Price</th>
-              {/* <th className="text-center">Status</th> */}
+              <th className="text-center">Customer</th>
+              <th className="text-center">E-mail</th>
+              <th className="text-center">Phone</th>
+              <th className="text-center">Address</th>
+              <th className="text-center">Price</th>
               <th className="text-center">Action</th>
             </tr>
           </thead>
@@ -74,13 +72,7 @@ const ManageAllOrders = () => {
                   {order?.streetAddress}, {order?.City}, {order?.district}-
                   {order?.Postcode}
                 </td>
-                {/* <td>{order?.title}</td> */}
-                <td>{order?.Price}</td>
-
-                {/* <td className="text-center">
-
-                                    <button onClick={() => handleUpdate(order?._id, order?.status)} className={(order?.status === "Pending") ? "btn btn-danger" : "btn btn-success"}>{order?.status}</button>
-                                </td> */}
+                <td>{order?.cost}</td>
                 <td className="text-center">
                   <button
                     onClick={() => handleDeleteUser(order?._id)}

@@ -4,10 +4,7 @@ import { Spinner } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 
 const CheckoutForm = ({ orders }) => {
-  const { Price, name, _id } = orders;
-  console.log(_id, Price);
-  let price = Price;
-  console.log(price);
+  const { cost, name, _id } = orders;
   const { user } = useAuth();
   const stripe = useStripe();
   const elements = useElements();
@@ -19,16 +16,16 @@ const CheckoutForm = ({ orders }) => {
 
   useEffect(() => {
     fetch(
-      "https://dry-shelf-35127.herokuapp.com/create-payment-intent",
+      "https://blooming-mesa-58970.herokuapp.com/create-payment-intent",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ price }),
+        body: JSON.stringify({ cost }),
       }
     )
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, [price]);
+  }, [cost]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +81,7 @@ const CheckoutForm = ({ orders }) => {
         transaction: paymentIntent.client_secret.slice('_secret')[0],
       };
       console.log(payment);
-      const url = `https://dry-shelf-35127.herokuapp.com/my-orders/${_id}`;
+      const url = `https://blooming-mesa-58970.herokuapp.com/allOrders/${_id}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -121,7 +118,7 @@ const CheckoutForm = ({ orders }) => {
           <Spinner animation="border" />
         ) : (
           <button className='fw-bold btn btn-primary mt-4' type="submit" disabled={!stripe || success}>
-            Pay ${Price}
+            Pay ${cost}
           </button>
         )}
       </form>

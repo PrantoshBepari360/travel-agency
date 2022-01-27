@@ -20,7 +20,7 @@ const Blog = ({ blogs, loading }) => {
             <Card.Img className="services-img" variant="top" src={blog.image} />
             <Card.Body>
               <Card.Title className="services-title fs-6">
-                {user} John Doe
+                {user} {blog.travel}
                 <span className="comment">{comment} (3)Comments</span>
               </Card.Title>
               <Card.Title className="services-title">{blog.title}</Card.Title>

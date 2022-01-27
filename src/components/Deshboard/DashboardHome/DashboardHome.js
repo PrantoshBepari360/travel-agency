@@ -19,7 +19,7 @@ const DashboardHome = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrders`)
+    fetch(`https://blooming-mesa-58970.herokuapp.com/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -27,7 +27,7 @@ const DashboardHome = () => {
   const [allUser, setAllUser] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/users`;
+    const url = `https://blooming-mesa-58970.herokuapp.com/users`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllUser(data));
@@ -36,7 +36,7 @@ const DashboardHome = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/services`;
+    const url = `https://blooming-mesa-58970.herokuapp.com/services`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));
@@ -45,7 +45,7 @@ const DashboardHome = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/review`;
+    const url = `https://blooming-mesa-58970.herokuapp.com/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

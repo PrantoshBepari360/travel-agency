@@ -62,9 +62,9 @@ const BlogDetails = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <h3 className="mt-5">{order.title}</h3>
+            <h3 className="mt-5">{order.title}{order.location}</h3>
             <div className="mt-3 text-center f-s">
-              <span className="center">{user} John Doe</span>
+              <span className="center">{user} {order.travel}</span>
               <span>{calender} November 16-2021</span>
               <span className="comment">{comment} (3)Comments</span>
             </div>

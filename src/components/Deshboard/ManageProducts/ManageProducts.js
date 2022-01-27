@@ -11,7 +11,7 @@ const ManageProducts = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services`)
+    fetch(`https://blooming-mesa-58970.herokuapp.com/services`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
@@ -29,7 +29,7 @@ const ManageProducts = () => {
   const handleDeleteUser = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/services/${id}`;
+      const url = `https://blooming-mesa-58970.herokuapp.com/services/${id}`;
       fetch(url, {
         method: "DELETE",
       })

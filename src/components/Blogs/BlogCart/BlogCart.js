@@ -12,7 +12,7 @@ const BlogCart = () => {
   const [blogPage] = useState(10);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://blooming-mesa-58970.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setBlog(data));
     seLoading(false);

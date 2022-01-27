@@ -11,6 +11,7 @@ import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
 import ContactUs from './components/ContactUs/ContactUs/ContactUs';
 import AddProduct from "./components/Deshboard/AddProduct/AddProduct.js";
 import Dashboard from "./components/Deshboard/Dashboard/Dashboard.js";
+import Payment from "./components/Deshboard/Payment/Payment.js";
 import DashboardHome from "./components/Deshboard/DashboardHome/DashboardHome.js";
 import MakeAdmin from "./components/Deshboard/MakeAdmin/MakeAdmin.js";
 import ManageAllOrders from "./components/Deshboard/ManageAllOrders/ManageAllOrders.js";
@@ -43,6 +44,7 @@ function App() {
             <Route path={`/dashboard/makeAdmin`} element={<AdminRoute><MakeAdmin /></AdminRoute>} />
             <Route path={`/dashboard/manageAllOrders`} element={<AdminRoute><ManageAllOrders /></AdminRoute>} />
             <Route path={`/dashboard/manageProducts`} element={<AdminRoute><ManageProducts /></AdminRoute>} />
+            <Route path={`/dashboard/payment/:paymentId`} element={<Payment />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

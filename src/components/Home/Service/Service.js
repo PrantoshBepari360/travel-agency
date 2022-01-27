@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./service.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faUser } from "@fortawesome/free-regular-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faComment, faUser } from "@fortawesome/free-regular-svg-icons";
 
-const comment = <FontAwesomeIcon icon={faComment} />;
-const user = <FontAwesomeIcon icon={faUser} />;
+// const comment = <FontAwesomeIcon icon={faComment} />;
+// const user = <FontAwesomeIcon icon={faUser} />;
 
 const Service = () => {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://blooming-mesa-58970.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -37,10 +37,10 @@ const Service = () => {
                   src={service.image}
                 />
                 <Card.Body>
-                  <Card.Title className="services-title fs-6">
+                  {/* <Card.Title className="services-title fs-6">
                     {user} John Doe
                     <span className="comment">{comment} (3)Comments</span>
-                  </Card.Title>
+                  </Card.Title> */}
                   <Card.Title className="services-title">
                     {service.title}
                   </Card.Title>

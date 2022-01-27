@@ -16,7 +16,7 @@ const Payment = () => {
 
   useEffect(() => {
     fetch(
-      `https://dry-shelf-35127.herokuapp.com/my-orders/${paymentId}`
+      `https://blooming-mesa-58970.herokuapp.com/allOrders/${paymentId}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -25,10 +25,10 @@ const Payment = () => {
   return (
     <div style={{width: '50%', margin: '10% auto'}}>
       <h4 className="mb-3">
-        Please Pay ${orders.Price} {orders.name} to {orders.email}
+        Please Pay ${orders.cost} {orders.firstName} {orders.lastName} to {orders.email}
       </h4>
 
-      {orders?.Price && (
+      {orders?.cost && (
         <Elements stripe={stripePromise}>
           <CheckoutForm orders={orders} />
         </Elements>

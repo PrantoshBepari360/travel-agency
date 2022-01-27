@@ -14,7 +14,9 @@ const MyOrders = () => {
   console.log(orders);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrders?email=${user.email}`)
+    fetch(
+      `https://blooming-mesa-58970.herokuapp.com/allOrders?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user.email]);
@@ -32,7 +34,7 @@ const MyOrders = () => {
   const handleDeleteUser = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete");
     if (proceed) {
-      const url = `http://localhost:5000/allOrders/${id}`;
+      const url = `https://blooming-mesa-58970.herokuapp.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -55,10 +57,10 @@ const MyOrders = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              {/* <th>Product Photo</th>
-                            <th>Product Name</th> */}
+              <th className="text-center">Name</th>
+              <th className="text-center">Email</th>
+              <th className="text-center">Product Name</th>
               <th className="text-center">Price</th>
-              {/* <th className="text-center">Status</th> */}
               <th className="text-center">Payment</th>
               <th className="text-center">Action</th>
             </tr>
@@ -66,14 +68,10 @@ const MyOrders = () => {
           <tbody>
             {orders?.map((order, index) => (
               <tr key={order._id}>
-                {/* <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
-                                <td>{order?.title}</td> */}
-                <td className="text-center">{order?.Price}</td>
-
-                {/* <td className="text-center">
-
-                                    <span className={(order?.status === "Pending") ? "text-danger" : "text-success"}>{order?.status}</span>
-                                </td> */}
+                <td className="text-center">{order.firstName} {order.lastName}</td>
+                <td className="text-center">{order?.email}</td>
+                <td className="text-center">{order?.title}</td>
+                <td className="text-center">{order?.cost}</td>
 
                 <td className="text-center">
                   {order.payment ? (
