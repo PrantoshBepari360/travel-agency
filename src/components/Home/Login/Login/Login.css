@@ -1,0 +1,29 @@
+.login-form {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form form input {
+  margin-bottom: 10px;
+}
+
+.btn-dark {
+  padding: 10px;
+}
+
+.zara-btn {
+  background-color: rgb(232, 240, 254);
+}
+
+.btn-primary {
+  background-color: #ff7602;
+  border-color: #ff7602;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #bfa67a;
+  border-radius: 0;
+  color: #fff;
+}
