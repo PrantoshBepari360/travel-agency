@@ -9,7 +9,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `https://blooming-mesa-58970.herokuapp.com/review`;
+    const url = `https://travel-agency-sarver.vercel.app/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

@@ -19,12 +19,6 @@ const Cart = () => {
       .then((data) => setOrder(data));
   }, [_id]);
 
-  // const price = {name, cost};
-  // console.log(price);
-
-  // const inputs = {Input, name, cost}
-  // console.log(inputs);
-
   const [Input, setInput] = useState({
     firstName: "",
     lastName: "",
@@ -59,7 +53,6 @@ const Cart = () => {
   const {firstName, lastName, streetAddress, City, townName, district, Postcode, mobileNumber, email} = Input;
 
   const purchase = {title, cost, firstName, lastName, streetAddress, City, townName, district, Postcode, mobileNumber, email}
-  console.log(purchase);
 
   const onSubmit = (event) => {
     // data send to the server

@@ -12,7 +12,7 @@ const Service = () => {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch("https://blooming-mesa-58970.herokuapp.com/services")
+    fetch("https://travel-agency-sarver.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

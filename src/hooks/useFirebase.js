@@ -91,9 +91,9 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`https://dry-shelf-35127.herokuapp.com/users/${user.email}`)
+    fetch(`https://travel-agency-sarver.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+      .then((data) => setAdmin(data?.admin));
   }, [user.email]);
 
   const logOut = () => {
@@ -109,7 +109,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email: email, displayName: displayName };
-    fetch("https://dry-shelf-35127.herokuapp.com/users", {
+    fetch("https://travel-agency-sarver.vercel.app/users", {
       method: method,
       headers: {
         "Content-Type": "application/json",
