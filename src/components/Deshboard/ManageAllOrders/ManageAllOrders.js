@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`https://blooming-mesa-58970.herokuapp.com/allOrders`)
+    fetch(`https://travel-agency-sarver.vercel.app/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);

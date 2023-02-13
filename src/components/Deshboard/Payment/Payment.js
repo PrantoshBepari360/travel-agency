@@ -16,7 +16,7 @@ const Payment = () => {
 
   useEffect(() => {
     fetch(
-      `https://blooming-mesa-58970.herokuapp.com/allOrders/${paymentId}`
+      `https://travel-agency-sarver.vercel.app/allOrders/${paymentId}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));

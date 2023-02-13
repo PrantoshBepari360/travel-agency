@@ -28,7 +28,7 @@ const BlogDetails = () => {
   console.log(order);
 
   useEffect(() => {
-    fetch(`https://dry-shelf-35127.herokuapp.com/services/${_id}`)
+    fetch(`https://travel-agency-sarver.vercel.app/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [_id]);
@@ -62,9 +62,14 @@ const BlogDetails = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <h3 className="mt-5">{order.title}{order.location}</h3>
+            <h3 className="mt-5">
+              {order.title}
+              {order.location}
+            </h3>
             <div className="mt-3 text-center f-s">
-              <span className="center">{user} {order.travel}</span>
+              <span className="center">
+                {user} {order.travel}
+              </span>
               <span>{calender} November 16-2021</span>
               <span className="comment">{comment} (3)Comments</span>
             </div>

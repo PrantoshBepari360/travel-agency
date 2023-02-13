@@ -19,7 +19,7 @@ const DashboardHome = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`https://blooming-mesa-58970.herokuapp.com/allOrders`)
+    fetch(`https://travel-agency-sarver.vercel.app/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -27,7 +27,7 @@ const DashboardHome = () => {
   const [allUser, setAllUser] = useState([]);
 
   useEffect(() => {
-    const url = `https://blooming-mesa-58970.herokuapp.com/users`;
+    const url = `https://travel-agency-sarver.vercel.app/users`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllUser(data));
@@ -36,7 +36,7 @@ const DashboardHome = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = `https://blooming-mesa-58970.herokuapp.com/services`;
+    const url = `https://travel-agency-sarver.vercel.app/services`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));
@@ -45,7 +45,7 @@ const DashboardHome = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `https://blooming-mesa-58970.herokuapp.com/review`;
+    const url = `https://travel-agency-sarver.vercel.app/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

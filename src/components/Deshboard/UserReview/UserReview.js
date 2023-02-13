@@ -24,7 +24,7 @@ const UserReview = () => {
     data.photo = user.photoURL;
 
     axios
-      .post("https://blooming-mesa-58970.herokuapp.com/review", data)
+      .post("https://travel-agency-sarver.vercel.app/review", data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccess(true);

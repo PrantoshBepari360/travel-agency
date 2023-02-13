@@ -14,7 +14,7 @@ const Cart = () => {
   // console.log(order);
 
   useEffect(() => {
-    fetch(`https://blooming-mesa-58970.herokuapp.com/services/${_id}`)
+    fetch(`https://travel-agency-sarver.vercel.app/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [_id]);
@@ -56,7 +56,7 @@ const Cart = () => {
 
   const onSubmit = (event) => {
     // data send to the server
-    fetch("https://blooming-mesa-58970.herokuapp.com/allOrders", {
+    fetch("https://travel-agency-sarver.vercel.app/allOrders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

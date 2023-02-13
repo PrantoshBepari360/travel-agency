@@ -16,7 +16,7 @@ const CheckoutForm = ({ orders }) => {
 
   useEffect(() => {
     fetch(
-      "https://blooming-mesa-58970.herokuapp.com/create-payment-intent",
+      "https://travel-agency-sarver.vercel.app/create-payment-intent",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ const CheckoutForm = ({ orders }) => {
         transaction: paymentIntent.client_secret.slice('_secret')[0],
       };
       console.log(payment);
-      const url = `https://blooming-mesa-58970.herokuapp.com/allOrders/${_id}`;
+      const url = `https://travel-agency-sarver.vercel.app/allOrders/${_id}`;
       console.log(url);
       fetch(url, {
         method: "PUT",

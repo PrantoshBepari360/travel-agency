@@ -12,7 +12,7 @@ const MakeAdmin = () => {
   const handleAdminSubmit = (e) => {
     e.preventDefault();
     const user = { email };
-    fetch("https://blooming-mesa-58970.herokuapp.com/users/admin", {
+    fetch("https://travel-agency-sarver.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,

@@ -65,8 +65,8 @@ const useFirebase = () => {
     setIsloading(true);
     signInWithPopup(auth, googleProvider)
       .then((userCredential) => {
-        const user = userCredential.user;
-        saveUser(user.email, user.displayName, "PUT");
+        const user = userCredential?.user;
+        saveUser(user.email, user?.displayName, "PUT");
         setAuthError("");
         const destination = location?.state?.from || "/home";
         navigate(destination);
@@ -94,7 +94,7 @@ const useFirebase = () => {
     fetch(`https://travel-agency-sarver.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data?.admin));
-  }, [user.email]);
+  }, [user?.email]);
 
   const logOut = () => {
     signOut(auth)
@@ -117,6 +117,8 @@ const useFirebase = () => {
       body: JSON.stringify(user),
     }).then();
   };
+
+  console.log(user)
 
   return {
     user,

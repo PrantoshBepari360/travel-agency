@@ -13,7 +13,7 @@ const AddProduct = () => {
   } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("https://blooming-mesa-58970.herokuapp.com/services", data)
+      .post("https://travel-agency-sarver.vercel.app/services", data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccess(true);

@@ -15,7 +15,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     fetch(
-      `https://blooming-mesa-58970.herokuapp.com/allOrders?email=${user.email}`
+      `https://travel-agency-sarver.vercel.app/allOrders?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));
