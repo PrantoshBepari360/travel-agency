@@ -15,14 +15,11 @@ const CheckoutForm = ({ orders }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch(
-      "https://travel-agency-sarver.vercel.app/create-payment-intent",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cost }),
-      }
-    )
+    fetch("https://travel-agency-0dnf.onrender.com/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cost }),
+    })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [cost]);
@@ -78,10 +75,10 @@ const CheckoutForm = ({ orders }) => {
         amount: paymentIntent.amount,
         created: paymentIntent.created,
         last4: paymentMethod.card.last4,
-        transaction: paymentIntent.client_secret.slice('_secret')[0],
+        transaction: paymentIntent.client_secret.slice("_secret")[0],
       };
       console.log(payment);
-      const url = `https://travel-agency-sarver.vercel.app/allOrders/${_id}`;
+      const url = `https://travel-agency-0dnf.onrender.com/allOrders/${_id}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -117,7 +114,11 @@ const CheckoutForm = ({ orders }) => {
         {processing ? (
           <Spinner animation="border" />
         ) : (
-          <button className='fw-bold btn btn-primary mt-4' type="submit" disabled={!stripe || success}>
+          <button
+            className="fw-bold btn btn-primary mt-4"
+            type="submit"
+            disabled={!stripe || success}
+          >
             Pay ${cost}
           </button>
         )}

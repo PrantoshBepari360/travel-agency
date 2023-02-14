@@ -91,7 +91,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`https://travel-agency-sarver.vercel.app/users/${user?.email}`)
+    fetch(`https://travel-agency-0dnf.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data?.admin));
   }, [user?.email]);
@@ -109,7 +109,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email: email, displayName: displayName };
-    fetch("https://travel-agency-sarver.vercel.app/users", {
+    fetch("https://travel-agency-0dnf.onrender.com/users", {
       method: method,
       headers: {
         "Content-Type": "application/json",
@@ -118,7 +118,7 @@ const useFirebase = () => {
     }).then();
   };
 
-  console.log(user)
+  console.log(user);
 
   return {
     user,

@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`https://travel-agency-sarver.vercel.app/allOrders`)
+    fetch(`https://travel-agency-0dnf.onrender.com/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);

@@ -12,7 +12,7 @@ const BlogCart = () => {
   const [blogPage] = useState(10);
 
   useEffect(() => {
-    fetch("https://travel-agency-sarver.vercel.app/services")
+    fetch("https://travel-agency-0dnf.onrender.com/services")
       .then((res) => res.json())
       .then((data) => setBlog(data));
     seLoading(false);

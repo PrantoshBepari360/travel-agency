@@ -12,7 +12,7 @@ const MakeAdmin = () => {
   const handleAdminSubmit = (e) => {
     e.preventDefault();
     const user = { email };
-    fetch("https://travel-agency-sarver.vercel.app/users/admin", {
+    fetch("https://travel-agency-0dnf.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,

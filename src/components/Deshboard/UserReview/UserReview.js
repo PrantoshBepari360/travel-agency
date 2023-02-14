@@ -24,7 +24,7 @@ const UserReview = () => {
     data.photo = user.photoURL;
 
     axios
-      .post("https://travel-agency-sarver.vercel.app/review", data)
+      .post("https://travel-agency-0dnf.onrender.com/review", data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccess(true);

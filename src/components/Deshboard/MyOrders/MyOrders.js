@@ -15,7 +15,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-agency-sarver.vercel.app/allOrders?email=${user.email}`
+      `https://travel-agency-0dnf.onrender.com/allOrders?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -68,7 +68,9 @@ const MyOrders = () => {
           <tbody>
             {orders?.map((order, index) => (
               <tr key={order._id}>
-                <td className="text-center">{order.firstName} {order.lastName}</td>
+                <td className="text-center">
+                  {order.firstName} {order.lastName}
+                </td>
                 <td className="text-center">{order?.email}</td>
                 <td className="text-center">{order?.title}</td>
                 <td className="text-center">{order?.cost}</td>

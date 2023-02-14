@@ -9,7 +9,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `https://travel-agency-sarver.vercel.app/review`;
+    const url = `https://travel-agency-0dnf.onrender.com/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

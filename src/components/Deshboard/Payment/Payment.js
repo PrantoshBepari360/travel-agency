@@ -10,22 +10,21 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { paymentId } = useParams();
-  console.log(paymentId)
+  console.log(paymentId);
   const [orders, setOrders] = useState({});
   console.log(orders);
 
   useEffect(() => {
-    fetch(
-      `https://travel-agency-sarver.vercel.app/allOrders/${paymentId}`
-    )
+    fetch(`https://travel-agency-0dnf.onrender.com/allOrders/${paymentId}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [paymentId]);
 
   return (
-    <div style={{width: '50%', margin: '10% auto'}}>
+    <div style={{ width: "50%", margin: "10% auto" }}>
       <h4 className="mb-3">
-        Please Pay ${orders.cost} {orders.firstName} {orders.lastName} to {orders.email}
+        Please Pay ${orders.cost} {orders.firstName} {orders.lastName} to{" "}
+        {orders.email}
       </h4>
 
       {orders?.cost && (

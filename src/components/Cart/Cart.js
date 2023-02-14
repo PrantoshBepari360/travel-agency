@@ -7,14 +7,14 @@ import CartBanner from "./CartBanner/CartBanner";
 
 const Cart = () => {
   let { _id } = useParams();
-   //define navigate function
-   const navigate = useNavigate();
+  //define navigate function
+  const navigate = useNavigate();
 
   const [order, setOrder] = useState([]);
   // console.log(order);
 
   useEffect(() => {
-    fetch(`https://travel-agency-sarver.vercel.app/services/${_id}`)
+    fetch(`https://travel-agency-0dnf.onrender.com/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [_id]);
@@ -49,14 +49,36 @@ const Cart = () => {
     });
   };
 
-  const {title, cost} = order;
-  const {firstName, lastName, streetAddress, City, townName, district, Postcode, mobileNumber, email} = Input;
+  const { title, cost } = order;
+  const {
+    firstName,
+    lastName,
+    streetAddress,
+    City,
+    townName,
+    district,
+    Postcode,
+    mobileNumber,
+    email,
+  } = Input;
 
-  const purchase = {title, cost, firstName, lastName, streetAddress, City, townName, district, Postcode, mobileNumber, email}
+  const purchase = {
+    title,
+    cost,
+    firstName,
+    lastName,
+    streetAddress,
+    City,
+    townName,
+    district,
+    Postcode,
+    mobileNumber,
+    email,
+  };
 
   const onSubmit = (event) => {
     // data send to the server
-    fetch("https://travel-agency-sarver.vercel.app/allOrders", {
+    fetch("https://travel-agency-0dnf.onrender.com/allOrders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

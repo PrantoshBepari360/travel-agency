@@ -28,7 +28,7 @@ const BlogDetails = () => {
   console.log(order);
 
   useEffect(() => {
-    fetch(`https://travel-agency-sarver.vercel.app/services/${_id}`)
+    fetch(`https://travel-agency-0dnf.onrender.com/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [_id]);

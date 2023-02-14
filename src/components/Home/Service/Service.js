@@ -12,7 +12,7 @@ const Service = () => {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch("https://travel-agency-sarver.vercel.app/services")
+    fetch("https://travel-agency-0dnf.onrender.com/services")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

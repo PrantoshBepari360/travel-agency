@@ -13,7 +13,7 @@ const AddProduct = () => {
   } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("https://travel-agency-sarver.vercel.app/services", data)
+      .post("https://travel-agency-0dnf.onrender.com/services", data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccess(true);
@@ -51,7 +51,7 @@ const AddProduct = () => {
               </Form.Group>
             </Row>
             <Row className="mb-3">
-            <Form.Group as={Col} controlId="Description">
+              <Form.Group as={Col} controlId="Description">
                 <Form.Label>
                   <b>Category</b>
                 </Form.Label>
@@ -63,7 +63,7 @@ const AddProduct = () => {
               </Form.Group>
             </Row>
             <Row className="mb-3">
-            <Form.Group as={Col} controlId="Description">
+              <Form.Group as={Col} controlId="Description">
                 <Form.Label>
                   <b>Location</b>
                 </Form.Label>
@@ -75,7 +75,7 @@ const AddProduct = () => {
               </Form.Group>
             </Row>
             <Row className="mb-3">
-            <Form.Group as={Col} controlId="Description">
+              <Form.Group as={Col} controlId="Description">
                 <Form.Label>
                   <b>Traveler info</b>
                 </Form.Label>

@@ -19,7 +19,7 @@ const DashboardHome = () => {
   const [orders, setOrders] = useState();
 
   useEffect(() => {
-    fetch(`https://travel-agency-sarver.vercel.app/allOrders`)
+    fetch(`https://travel-agency-0dnf.onrender.com/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -27,7 +27,7 @@ const DashboardHome = () => {
   const [allUser, setAllUser] = useState([]);
 
   useEffect(() => {
-    const url = `https://travel-agency-sarver.vercel.app/users`;
+    const url = `https://travel-agency-0dnf.onrender.com/users`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllUser(data));
@@ -36,7 +36,7 @@ const DashboardHome = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = `https://travel-agency-sarver.vercel.app/services`;
+    const url = `https://travel-agency-0dnf.onrender.com/services`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));
@@ -45,7 +45,7 @@ const DashboardHome = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `https://travel-agency-sarver.vercel.app/review`;
+    const url = `https://travel-agency-0dnf.onrender.com/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));
