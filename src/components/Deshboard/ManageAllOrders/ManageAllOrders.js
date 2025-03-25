@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
   const handleDeleteUser = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete");
     if (proceed) {
-      const url = `https://blooming-mesa-58970.herokuapp.com/allOrders/${id}`;
+      const url = `https://travel-agency-0dnf.onrender.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

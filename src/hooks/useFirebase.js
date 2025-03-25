@@ -118,7 +118,7 @@ const useFirebase = () => {
     }).then();
   };
 
-  console.log(user);
+  // console.log(user);
 
   return {
     user,
